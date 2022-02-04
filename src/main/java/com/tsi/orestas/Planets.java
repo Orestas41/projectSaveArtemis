@@ -1,6 +1,6 @@
 package com.tsi.orestas;
 
-public class Earth extends Objects {
+public class Planets extends Objects {
 
         public void findDisplayString()
         {
@@ -26,19 +26,4 @@ public class Earth extends Objects {
                         setDisplayString("  .  ");
                 }
         }
-
-
-
-
-
-
-
-
-
-
-        //static int earth = space[(int)(Math.random()*10-1)][(int)(Math.random()*10-1)];
-        //static int yEarth = y[(int)(Math.random()*10-1)];
-
-        //static String earthIcon = " O ";
-
 }

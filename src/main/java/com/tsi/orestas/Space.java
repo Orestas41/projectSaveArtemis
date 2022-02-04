@@ -1,94 +1,97 @@
 package com.tsi.orestas;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Space {
 
-        Earth[][] space;
+        Planets[][] gameSpace;
         int spaceSize;
 
         public Space(int size) {
-            int xPos, yPos;
+            int xPos;
+            int yPos;
+            Random random = new Random();
 
             setSpaceSize(size);
-            space = new Earth[spaceSize][spaceSize];
+            gameSpace = new Planets[spaceSize][spaceSize];
 
             for (xPos = 0; xPos < spaceSize; xPos++) {
                 for (yPos = 0; yPos < spaceSize; yPos++) {
-                    Earth emptyTile = new Earth();
+                    Planets emptyTile = new Planets();
                     emptyTile.setEarth(false);
                     emptyTile.setArtemis(false);
                     emptyTile.findDisplayString();
-                    space[xPos][yPos] = emptyTile;
+                    gameSpace[xPos][yPos] = emptyTile;
                 }
             }
 
-            Earth earth = new Earth();
-            int yEarth = (int)(Math.random()*10-1);
-            int xEarth = (int)(Math.random()*10-1);
+            Planets earth = new Planets();
+            int yEarth = random.nextInt(9);
+            int xEarth = random.nextInt(9);
 
-            Earth mars = new Earth();
-            int yMars = (int)(Math.random()*10-1);
-            int xMars = (int)(Math.random()*10-1);
+            Planets mars = new Planets();
+            int yMars = random.nextInt(9);
+            int xMars = random.nextInt(9);
 
-            Earth venus = new Earth();
-            int yVenus = (int)(Math.random()*10-1);
-            int xVenus = (int)(Math.random()*10-1);
+            Planets venus = new Planets();
+            int yVenus = random.nextInt(9);
+            int xVenus = random.nextInt(9);
 
-            Earth uranus = new Earth();
-            int yUranus = (int)(Math.random()*10-1);
-            int xUranus = (int)(Math.random()*10-1);
+            Planets uranus = new Planets();
+            int yUranus = random.nextInt(9);
+            int xUranus = random.nextInt(9);
 
-            Earth jupiter = new Earth();
-            int yJupiter = (int)(Math.random()*10-1);
-            int xJupiter = (int)(Math.random()*10-1);
+            Planets jupiter = new Planets();
+            int yJupiter = random.nextInt(9);
+            int xJupiter = random.nextInt(9);
 
-            Earth artemis = new Earth();
+            Planets artemis = new Planets();
             int xArtemis = 4;
             int yArtemis = 4;
 
 
-            System.out.println("You are piloting a space ship called Artemis. You need to get back to the Earth");
+            System.out.println("You are piloting a Spaceship called Artemis. You need to get back to the Planets");
 
 
             double distanceToEarth;
 
             do {
 
-                if (space[xEarth][yEarth].isEarth() == false) {
+                if (!gameSpace[xEarth][yEarth].isEarth()) {
                     earth.setEarth(true);
                     earth.findDisplayString();
-                    space[xEarth][yEarth] = earth;
+                    gameSpace[xEarth][yEarth] = earth;
                 }
 
-                if (space[xMars][yMars].isMars() == false) {
+                if (!gameSpace[xMars][yMars].isMars()) {
                     mars.setMars(true);
                     mars.findDisplayString();
-                    space[xMars][yMars] = mars;
+                    gameSpace[xMars][yMars] = mars;
                 }
 
-                if (space[xVenus][yVenus].isVenus() == false) {
+                if (!gameSpace[xVenus][yVenus].isVenus()) {
                     venus.setVenus(true);
                     venus.findDisplayString();
-                    space[xVenus][yVenus] = venus;
+                    gameSpace[xVenus][yVenus] = venus;
                 }
 
-                if (space[xUranus][yUranus].isUranus() == false) {
+                if (!gameSpace[xUranus][yUranus].isUranus()) {
                     uranus.setUranus(true);
                     uranus.findDisplayString();
-                    space[xUranus][yUranus] = uranus;
+                    gameSpace[xUranus][yUranus] = uranus;
                 }
 
-                if (space[xJupiter][yJupiter].isJupiter() == false) {
+                if (!gameSpace[xJupiter][yJupiter].isJupiter()) {
                     jupiter.setJupiter(true);
                     jupiter.findDisplayString();
-                    space[xJupiter][yJupiter] = jupiter;
+                    gameSpace[xJupiter][yJupiter] = jupiter;
                 }
 
-                if (space[xArtemis][yArtemis].isArtemis() == false) {
+                if (!gameSpace[xArtemis][yArtemis].isArtemis()) {
                     artemis.setArtemis(true);
                     artemis.findDisplayString();
-                    space[xArtemis][yArtemis] = artemis;
+                    gameSpace[xArtemis][yArtemis] = artemis;
                 }
 
                 int xDistance = xEarth - xArtemis;
@@ -99,11 +102,11 @@ public class Space {
                 for (int i = 0; i < spaceSize; i++) {
                     System.out.println("\n");
                     for (int j = 0; j < spaceSize; j++) {
-                        System.out.print(space[i][j].getDisplayString());
+                        System.out.print(gameSpace[i][j].getDisplayString());
                     }
                 }
 
-                Earth emptyTile = new Earth();
+                Planets emptyTile = new Planets();
                 emptyTile.setEarth(false);
                 emptyTile.setArtemis(false);
                 emptyTile.setMars(false);
@@ -111,14 +114,14 @@ public class Space {
                 emptyTile.setUranus(false);
                 emptyTile.setJupiter(false);
                 emptyTile.findDisplayString();
-                space[xEarth][yEarth] = emptyTile;
-                space[xMars][yMars] = emptyTile;
-                space[xVenus][yVenus] = emptyTile;
-                space[xUranus][yUranus] = emptyTile;
-                space[xJupiter][yJupiter] = emptyTile;
+                gameSpace[xEarth][yEarth] = emptyTile;
+                gameSpace[xMars][yMars] = emptyTile;
+                gameSpace[xVenus][yVenus] = emptyTile;
+                gameSpace[xUranus][yUranus] = emptyTile;
+                gameSpace[xJupiter][yJupiter] = emptyTile;
 
                 System.out.println("\n");
-                System.out.println("Earth is " + distanceToEarth + " light-years away");
+                System.out.println("Planets is " + distanceToEarth + " light-years away");
 
                 Scanner directionInput = new Scanner(System.in);
                 System.out.println("Enter the direction you want to move ");
@@ -154,10 +157,13 @@ public class Space {
                         yUranus = yUranus + 1;
                         yJupiter = yJupiter + 1;
                         break;
+                    default:
+                        System.out.println("Wrong input. You can only use: Up, Down, Left, Right");
+                        break;
                 }
             } while ((int)(Math.round(distanceToEarth)) >= 1);
 
-            System.out.println("Artemis has reached the Earth");
+            System.out.println("Artemis has reached the Planets");
 
         }
 
@@ -166,25 +172,5 @@ public class Space {
         }
 
     }
-
-
-
-
-    /*private String displayString;
-
-    static int[] x = new int[10];
-    static int[] y = new int[10];
-
-    //static int[] y = {-4,-3,-2,-1,0,1,2,3,4};
-
-    static int[][] space = new int[10][10];
-
-    static int earth = space[(int)(Math.random()*10-1)][(int)(Math.random()*10-1)];
-
-    static int artemis = space[5][5];
-
-    static String empty = " . ";
-
-    */
 
 

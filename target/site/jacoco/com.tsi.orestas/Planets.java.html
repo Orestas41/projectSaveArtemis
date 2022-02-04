@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Planets.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">saveArtemis</a> &gt; <a href="index.source.html" class="el_package">com.tsi.orestas</a> &gt; <span class="el_source">Planets.java</span></div><h1>Planets.java</h1><pre class="source lang-java linenums">package com.tsi.orestas;
+
+<span class="fc" id="L3">public class Planets extends Objects {</span>
+
+        public void findDisplayString()
+        {
+<span class="nc bnc" id="L7" title="All 14 branches missed.">                if(isEarth() &amp;&amp; !isEmpty() &amp;&amp; !isVenus() &amp;&amp; !isMars() &amp;&amp; !isUranus() &amp;&amp; !isJupiter() &amp;&amp; !isArtemis()){</span>
+<span class="nc" id="L8">                        setDisplayString(&quot; \uD83C\uDF0E  &quot;);</span>
+                }
+<span class="nc bnc" id="L10" title="All 14 branches missed.">                if(isMars() &amp;&amp; !isEmpty() &amp;&amp; !isUranus() &amp;&amp; !isJupiter() &amp;&amp; !isArtemis() &amp;&amp; !isEarth() &amp;&amp; !isVenus()){</span>
+<span class="nc" id="L11">                        setDisplayString(&quot; \uD83D\uDC7D  &quot;);</span>
+                }
+<span class="nc bnc" id="L13" title="All 14 branches missed.">                if(isVenus() &amp;&amp; !isEmpty() &amp;&amp; !isUranus() &amp;&amp; !isJupiter() &amp;&amp; !isArtemis() &amp;&amp; !isEarth() &amp;&amp; !isMars()){</span>
+<span class="nc" id="L14">                        setDisplayString(&quot; \uD83C\uDF11  &quot;);</span>
+                }
+<span class="nc bnc" id="L16" title="All 14 branches missed.">                if(isUranus() &amp;&amp; !isEmpty() &amp;&amp; !isJupiter() &amp;&amp; !isArtemis() &amp;&amp; !isEarth() &amp;&amp; !isMars() &amp;&amp; !isVenus()){</span>
+<span class="nc" id="L17">                        setDisplayString(&quot; \uD83E\uDE90  &quot;);</span>
+                }
+<span class="nc bnc" id="L19" title="All 14 branches missed.">                if(isJupiter() &amp;&amp; !isEmpty() &amp;&amp; !isArtemis() &amp;&amp; !isEarth() &amp;&amp; !isMars() &amp;&amp; !isVenus() &amp;&amp; !isUranus()){</span>
+<span class="nc" id="L20">                        setDisplayString(&quot; \uD83C\uDF15  &quot;);</span>
+                }
+<span class="nc bnc" id="L22" title="All 14 branches missed.">                if(isArtemis() &amp;&amp; !isEmpty() &amp;&amp; !isEarth() &amp;&amp; !isVenus() &amp;&amp; !isMars() &amp;&amp; !isUranus() &amp;&amp; !isJupiter()){</span>
+<span class="nc" id="L23">                        setDisplayString(&quot; \uD83D\uDE80  &quot;);</span>
+                }
+<span class="nc bnc" id="L25" title="All 12 branches missed.">                if(!isArtemis() &amp;&amp; !isEarth() &amp;&amp; !isVenus() &amp;&amp; !isMars() &amp;&amp; !isUranus() &amp;&amp; !isJupiter()){</span>
+<span class="nc" id="L26">                        setDisplayString(&quot;  .  &quot;);</span>
+                }
+<span class="nc" id="L28">        }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
