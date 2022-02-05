@@ -19,80 +19,79 @@ public class Space {
             for (xPos = 0; xPos < spaceSize; xPos++) {
                 for (yPos = 0; yPos < spaceSize; yPos++) {
                     Planets emptyTile = new Planets();
-                    emptyTile.setEarth(false);
-                    emptyTile.setArtemis(false);
                     emptyTile.findDisplayString();
                     gameSpace[xPos][yPos] = emptyTile;
                 }
             }
 
             Planets earth = new Planets();
-            int yEarth = random.nextInt(9);
-            int xEarth = random.nextInt(9);
+            int yEarth = random.nextInt(size);
+            int xEarth = random.nextInt(size);
+            earth.setEarth(true);
+            earth.findDisplayString();
+            gameSpace[xEarth][yEarth] = earth;
 
             Planets mars = new Planets();
-            int yMars = random.nextInt(9);
-            int xMars = random.nextInt(9);
+            int yMars = random.nextInt(size);
+            int xMars = random.nextInt(size);
+            mars.setMars(true);
+            mars.findDisplayString();
+            gameSpace[xMars][yMars] = mars;
 
             Planets venus = new Planets();
-            int yVenus = random.nextInt(9);
-            int xVenus = random.nextInt(9);
+            int yVenus = random.nextInt(size);
+            int xVenus = random.nextInt(size);
+            venus.setVenus(true);
+            venus.findDisplayString();
+            gameSpace[xVenus][yVenus] = venus;
 
             Planets uranus = new Planets();
-            int yUranus = random.nextInt(9);
-            int xUranus = random.nextInt(9);
+            int yUranus = random.nextInt(size);
+            int xUranus = random.nextInt(size);
+            uranus.setUranus(true);
+            uranus.findDisplayString();
+            gameSpace[xUranus][yUranus] = uranus;
 
             Planets jupiter = new Planets();
-            int yJupiter = random.nextInt(9);
-            int xJupiter = random.nextInt(9);
+            int yJupiter = random.nextInt(size);
+            int xJupiter = random.nextInt(size);
+            jupiter.setJupiter(true);
+            jupiter.findDisplayString();
+            gameSpace[xJupiter][yJupiter] = jupiter;
 
             Planets artemis = new Planets();
-            int xArtemis = 4;
-            int yArtemis = 4;
+            int xArtemis = size / 2;
+            int yArtemis = size / 2;
+            artemis.setArtemis(true);
+            artemis.findDisplayString();
+            gameSpace[xArtemis][yArtemis] = artemis;
 
+            System.out.println("                           *     .--.\n" +
+                    "                                / /  `\n" +
+                    "               +               | |\n" +
+                    "                      '         \\ \\__,\n" +
+                    "                  *          +   '--'  *\n" +
+                    "                      +   /\\\n" +
+                    "         +              .'  '.   *\n" +
+                    "                *      /======\\      +\n" +
+                    "                      ;:.  _   ;\n" +
+                    "                      |:. (_)  |\n" +
+                    "                      |:.  _   |\n" +
+                    "            +         |:. (_)  |          *\n" +
+                    "                      ;:.      ;\n" +
+                    "                    .' \\:.    / `.\n" +
+                    "                   / .-'':._.'`-. \\\n" +
+                    "                   |/    /||\\    \\|\n" +
+                    "             jgs _..--\"\"\"````\"\"\"--.._\n" +
+                    "           _.-'``                    ``'-._\n" +
+                    "         -'                                '-");
 
-            System.out.println("You are piloting a Spaceship called Artemis. You need to get back to the Planets");
-
+            System.out.println("You are piloting a Spaceship called Artemis."
+                    + "\n" + "You have been stranded on the moon and you need to get back to the Earth");
 
             double distanceToEarth;
 
             do {
-
-                if (!gameSpace[xEarth][yEarth].isEarth()) {
-                    earth.setEarth(true);
-                    earth.findDisplayString();
-                    gameSpace[xEarth][yEarth] = earth;
-                }
-
-                if (!gameSpace[xMars][yMars].isMars()) {
-                    mars.setMars(true);
-                    mars.findDisplayString();
-                    gameSpace[xMars][yMars] = mars;
-                }
-
-                if (!gameSpace[xVenus][yVenus].isVenus()) {
-                    venus.setVenus(true);
-                    venus.findDisplayString();
-                    gameSpace[xVenus][yVenus] = venus;
-                }
-
-                if (!gameSpace[xUranus][yUranus].isUranus()) {
-                    uranus.setUranus(true);
-                    uranus.findDisplayString();
-                    gameSpace[xUranus][yUranus] = uranus;
-                }
-
-                if (!gameSpace[xJupiter][yJupiter].isJupiter()) {
-                    jupiter.setJupiter(true);
-                    jupiter.findDisplayString();
-                    gameSpace[xJupiter][yJupiter] = jupiter;
-                }
-
-                if (!gameSpace[xArtemis][yArtemis].isArtemis()) {
-                    artemis.setArtemis(true);
-                    artemis.findDisplayString();
-                    gameSpace[xArtemis][yArtemis] = artemis;
-                }
 
                 int xDistance = xEarth - xArtemis;
                 int yDistance = yEarth - yArtemis;
@@ -121,7 +120,8 @@ public class Space {
                 gameSpace[xJupiter][yJupiter] = emptyTile;
 
                 System.out.println("\n");
-                System.out.println("Planets is " + distanceToEarth + " light-years away");
+                System.out.println("/////////////////////////////////////////////////");
+                System.out.println("Earth is " + distanceToEarth + " light-years away");
 
                 Scanner directionInput = new Scanner(System.in);
                 System.out.println("Enter the direction you want to move ");
@@ -161,9 +161,83 @@ public class Space {
                         System.out.println("Wrong input. You can only use: Up, Down, Left, Right");
                         break;
                 }
+
+                if (xEarth<0) {xEarth+=9;}
+                if (yEarth<0) {yEarth+=9;}
+                if (xEarth>8) {xEarth-=9;}
+                if (yEarth>8) {yEarth-=9;}
+                earth.setEarth(true);
+                earth.findDisplayString();
+                gameSpace[xEarth][yEarth] = earth;
+
+                if (xMars<0) {xMars+=9;}
+                if (yMars<0) {yMars+=9;}
+                if (xMars>8) {xMars-=9;}
+                if (yMars>8) {yMars-=9;}
+                mars.setMars(true);
+                mars.findDisplayString();
+                gameSpace[xMars][yMars] = mars;
+
+                if (xVenus<0) {xVenus+=9;}
+                if (yVenus<0) {yVenus+=9;}
+                if (xVenus>8) {xVenus-=9;}
+                if (yVenus>8) {yVenus-=9;}
+                venus.setVenus(true);
+                venus.findDisplayString();
+                gameSpace[xVenus][yVenus] = venus;
+
+                if (xUranus<0) {xUranus+=9;}
+                if (yUranus<0) {yUranus+=9;}
+                if (xUranus>8) {xUranus-=9;}
+                if (yUranus>8) {yUranus-=9;}
+                uranus.setUranus(true);
+                uranus.findDisplayString();
+                gameSpace[xUranus][yUranus] = uranus;
+
+                if (xJupiter<0) {xJupiter+=9;}
+                if (yJupiter<0) {yJupiter+=9;}
+                if (xJupiter>8) {xJupiter-=9;}
+                if (yJupiter>8) {yJupiter-=9;}
+                jupiter.setJupiter(true);
+                jupiter.findDisplayString();
+                gameSpace[xJupiter][yJupiter] = jupiter;
+
             } while ((int)(Math.round(distanceToEarth)) >= 1);
 
-            System.out.println("Artemis has reached the Planets");
+            System.out.println("                     ▓▓██████████████                      \n" +
+                    "                      ▓▓████████████████████▓▓                  \n" +
+                    "                  ██████▓▓▒▒▒▒▓▓██████████▓▓██████              \n" +
+                    "              ▒▒████▓▓▒▒▒▒▒▒▒▒▒▒██████████▒▒▒▒██████░░          \n" +
+                    "            ▓▓████▒▒▓▓██▒▒▒▒▓▓██████████▓▓▒▒▒▒▒▒▓▓████          \n" +
+                    "          ██████▒▒██▓▓▓▓████████▓▓▒▒▓▓██▒▒▒▒▒▒▒▒▒▒▒▒████░░      \n" +
+                    "          ██▓▓▒▒██████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████      \n" +
+                    "        ██▓▓▓▓██████████▓▓▓▓██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████    \n" +
+                    "      ████████████████████▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████  \n" +
+                    "      ████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓██  \n" +
+                    "    ▓▓████████████████▒▒▒▒▒▒▒▒▓▓▒▒▒▒████▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██  \n" +
+                    "    ████████████████▓▓▒▒▓▓████▒▒▓▓██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓██\n" +
+                    "  ▓▓██████████████████▒▒▒▒▒▒██▓▓████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██\n" +
+                    "  ██████████████████▒▒▒▒▒▒▒▒▓▓████████▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██\n" +
+                    "  ████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██▓▓▓▓▒▒▒▒▒▒▒▒██▒▒██\n" +
+                    "▒▒██████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▒▒▒▒████████▒▒▒▒██████\n" +
+                    "▓▓██████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██▒▒▒▒▒▒▓▓████▓▓▒▒██████\n" +
+                    "██████████████▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▒▒██████████▒▒██████\n" +
+                    "▓▓██▓▓██████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██████████████████████\n" +
+                    "▒▒██▓▓▒▒████████▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██████████████████\n" +
+                    "  ████▒▒▓▓██████████████▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██████████████████\n" +
+                    "  ████▒▒▒▒████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████████████████████\n" +
+                    "  ▒▒██▒▒▒▒████████████████▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓████████████████████\n" +
+                    "    ████▒▒██████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒████████████████████▓▓\n" +
+                    "    ▓▓██▒▒██████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒████████████████████  \n" +
+                    "      ██████████████████████▓▓▒▒▒▒▒▒▒▒▒▒▒▒██▒▒████████████████  \n" +
+                    "      ▒▒████████████████████▓▓▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓██████████████▒▒  \n" +
+                    "        ▓▓████████████████████▒▒▒▒▒▒▒▒▒▒██▓▓██████████████▓▓    \n" +
+                    "          ████████████████████▒▒▒▒▒▒▒▒████████████████████      \n" +
+                    "          ░░████████████████████████████████████████████        \n" +
+                    "              ▓▓████████████████████████████████████▒▒          \n" +
+                    "                  ████████████████████████████████              \n" +
+                    "                      ▓▓████████████████████▓▓   ");
+            System.out.println("Artemis has reached the Earth");
 
         }
 

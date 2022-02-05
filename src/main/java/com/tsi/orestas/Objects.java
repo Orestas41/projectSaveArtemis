@@ -2,7 +2,6 @@ package com.tsi.orestas;
 
 public abstract class Objects {
 
-
     private boolean isEmpty = false;
     private boolean isArtemis = false;
     private boolean isEarth = false;
@@ -16,9 +15,7 @@ public abstract class Objects {
         return isEmpty;
     }
 
-    public void setEmpty(){
-        isEmpty = true;
-    }
+    public void setEmpty() {isEmpty = true;}
 
     public boolean isArtemis(){
         return isArtemis;
