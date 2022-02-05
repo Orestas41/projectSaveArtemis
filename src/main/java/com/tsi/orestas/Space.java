@@ -95,7 +95,6 @@ public class Space {
             double distanceToUranus;
             double distanceToJupiter;
 
-
             do {
 
                 int xEarthDistance = xEarth - xArtemis;
