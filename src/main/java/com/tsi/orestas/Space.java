@@ -1,6 +1,6 @@
 package com.tsi.orestas;
 
-import java.util.Random;
+import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class Space {
@@ -11,7 +11,7 @@ public class Space {
         public Space(int size) {
             int xPos;
             int yPos;
-            Random random = new Random();
+            SecureRandom random = new SecureRandom();
 
             setSpaceSize(size);
             gameSpace = new Planets[spaceSize][spaceSize];
@@ -66,25 +66,26 @@ public class Space {
             artemis.findDisplayString();
             gameSpace[xArtemis][yArtemis] = artemis;
 
-            System.out.println("                           *     .--.\n" +
-                    "                                / /  `\n" +
-                    "               +               | |\n" +
-                    "                      '         \\ \\__,\n" +
-                    "                  *          +   '--'  *\n" +
-                    "                      +   /\\\n" +
-                    "         +              .'  '.   *\n" +
-                    "                *      /======\\      +\n" +
-                    "                      ;:.  _   ;\n" +
-                    "                      |:. (_)  |\n" +
-                    "                      |:.  _   |\n" +
-                    "            +         |:. (_)  |          *\n" +
-                    "                      ;:.      ;\n" +
-                    "                    .' \\:.    / `.\n" +
-                    "                   / .-'':._.'`-. \\\n" +
-                    "                   |/    /||\\    \\|\n" +
-                    "               _..--\"\"\"````\"\"\"--.._\n" +
-                    "           _.-'``                    ``'-._\n" +
-                    "         -'                                '-");
+            System.out.println("""
+                                               *     .--.
+                                                    / /  `
+                                   +               | |
+                                          '         \\ \\__,
+                                      *          +   '--'  *
+                                          +   /\\
+                             +              .'  '.   *
+                                    *      /======\\      +
+                                          ;:.  _   ;
+                                          |:. (_)  |
+                                          |:.  _   |
+                                +         |:. (_)  |          *
+                                          ;:.      ;
+                                        .' \\:.    / `.
+                                       / .-'':._.'`-. \\
+                                       |/    /||\\    \\|
+                                   _..--\"\"\"````\"\"\"--.._
+                               _.-'``                    ``'-._
+                             -'                                '-""");
 
             System.out.println("You are piloting a Spaceship called Artemis."
                     + "\n" + "You have been stranded on the moon and you need to get back to the Earth");
@@ -123,7 +124,8 @@ public class Space {
                 distanceToJupiter = Math.sqrt(((xJupiterDistance * xJupiterDistance) + (yJupiterDistance * yJupiterDistance)));
 
                 if (distanceToMars < 1){
-                    System.out.println("        ~+\n" +
+                    System.out.println(
+                            "        ~+\n" +
                             "\n" +
                             "                 *       +\n" +
                             "           '                  |\n" +
@@ -136,7 +138,8 @@ public class Space {
                             "        O      *        '       .Mars");
                 }
                 if (distanceToVenus < 1){
-                    System.out.println("             _______\n" +
+                    System.out.println(
+                            "             _______\n" +
                             "          .-' _____ '-.\n" +
                             "        .' .-'.  ':'-. '.\n" +
                             "       / .''::: .:    '. \\\n" +
@@ -150,7 +153,8 @@ public class Space {
                             "Venus     '-._______.-");
                 }
                 if (distanceToUranus < 1){
-                    System.out.println("                                                                    ..;===+.\n" +
+                    System.out.println(
+                            "                                                                    ..;===+.\n" +
                             "                                                                .:=iiiiii=+=\n" +
                             "                                                             .=i))=;::+)i=+,\n" +
                             "                                                          ,=i);)I)))I):=i=;\n" +
@@ -188,21 +192,29 @@ public class Space {
                             "`+=+++;`Uranus");
                 }
                 if (distanceToJupiter < 1){
-                    System.out.println("o               .        ___---___                    .                   \n" +
-                            "       .              .--\\        --.     .     .         .\n" +
-                            "                    ./.;_.\\     __/~ \\.     \n" +
-                            "                   /;  / `-'  __\\    . \\                            \n" +
-                            " .        .       / ,--'     / .   .;   \\        |\n" +
-                            "                 | .|       /       __   |      -O-       .\n" +
-                            "                |__/    __ |  . ;   \\ | . |      |\n" +
-                            "                |      /  \\\\_    . ;| \\___|    \n" +
-                            "   .    o       |      \\  .~\\\\___,--'     |           .\n" +
-                            "                 |     | . ; ~~~~\\_    __|\n" +
-                            "    |             \\    \\   .  .  ; \\  /_/   .\n" +
-                            "   -O-        .    \\   /         . |  ~/                  .\n" +
-                            "    |    .          ~\\ \\   .      /  /~          o\n" +
-                            "  .                   ~--___ ; ___--~       \n" +
-                            "                 .          ---         .              -Jupiter");
+                    System.out.println(
+                            "                .                                            .\n" +
+                            "     *   .                  .              .        .   *          .\n" +
+                            "  .         .                     .       .           .      .        .\n" +
+                            "        o                             .                   .\n" +
+                            "         .              .                  .           .\n" +
+                            "          0     .\n" +
+                            "                 .          .                 ,                ,    ,\n" +
+                            " .          \\          .                         .\n" +
+                            "      .      \\   ,\n" +
+                            "   .          o     .                 .                   .            .\n" +
+                            "     .         \\                 ,             .                .\n" +
+                            "               #\\##\\#      .                              .        .\n" +
+                            "             #  #O##\\###                .                        .\n" +
+                            "   .        #*#  #\\##\\###                       .                     ,\n" +
+                            "        .   ##*#  #\\##\\##               .                     .\n" +
+                            "      .      ##*#  #o##\\#         .                             ,       .\n" +
+                            "          .     *#  #\\#     .                    .             .          ,\n" +
+                            "                      \\          .                         .\n" +
+                            "____^/\\___^--____/\\____O______________/\\/\\---/\\___________---______________\n" +
+                            "   /\\^   ^  ^    ^                  ^^ ^  '\\ ^          ^       ---\n" +
+                            "         --           -            --  -      -         ---  __       ^\n" +
+                            "   --  __                      ___--  ^  ^                         --  __");
                 }
 
                 for (int i = 0; i < spaceSize; i++) {
@@ -315,7 +327,8 @@ public class Space {
 
             } while (distanceToEarth > 1);
 
-            System.out.println("              _-o#&&*''''?d:>b\\_\n" +
+            System.out.println(
+                    "              _-o#&&*''''?d:>b\\_\n" +
                     "          _o/\"`''  '',, dMF9MMMMMHo_\n" +
                     "       .o&#'        `\"MbHMMMMMMMMMMMHo.\n" +
                     "     .o\"\" '         vodM*$&&HMMMMMMMMMM?.\n" +
