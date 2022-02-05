@@ -82,7 +82,7 @@ public class Space {
                     "                    .' \\:.    / `.\n" +
                     "                   / .-'':._.'`-. \\\n" +
                     "                   |/    /||\\    \\|\n" +
-                    "             jgs _..--\"\"\"````\"\"\"--.._\n" +
+                    "               _..--\"\"\"````\"\"\"--.._\n" +
                     "           _.-'``                    ``'-._\n" +
                     "         -'                                '-");
 
@@ -90,13 +90,121 @@ public class Space {
                     + "\n" + "You have been stranded on the moon and you need to get back to the Earth");
 
             double distanceToEarth;
+            double distanceToMars;
+            double distanceToVenus;
+            double distanceToUranus;
+            double distanceToJupiter;
+
 
             do {
 
-                int xDistance = xEarth - xArtemis;
-                int yDistance = yEarth - yArtemis;
+                int xEarthDistance = xEarth - xArtemis;
+                int yEarthDistance = yEarth - yArtemis;
 
-                distanceToEarth = Math.sqrt(((xDistance * xDistance) + (yDistance * yDistance)));
+                distanceToEarth = Math.sqrt(((xEarthDistance * xEarthDistance) + (yEarthDistance * yEarthDistance)));
+
+                int xMarsDistance = xMars - xArtemis;
+                int yMarsDistance = yMars - yArtemis;
+
+                distanceToMars = Math.sqrt(((xMarsDistance * xMarsDistance) + (yMarsDistance * yMarsDistance)));
+
+                int xVenusDistance = xVenus - xArtemis;
+                int yVenusDistance = yVenus - yArtemis;
+
+                distanceToVenus = Math.sqrt(((xVenusDistance * xVenusDistance) + (yVenusDistance * yVenusDistance)));
+
+                int xUranusDistance = xUranus - xArtemis;
+                int yUranusDistance = yUranus - yArtemis;
+
+                distanceToUranus = Math.sqrt(((xUranusDistance * xUranusDistance) + (yUranusDistance * yUranusDistance)));
+
+                int xJupiterDistance = xJupiter - xArtemis;
+                int yJupiterDistance = yJupiter - yArtemis;
+
+                distanceToJupiter = Math.sqrt(((xJupiterDistance * xJupiterDistance) + (yJupiterDistance * yJupiterDistance)));
+
+                if (distanceToMars < 1){
+                    System.out.println("        ~+\n" +
+                            "\n" +
+                            "                 *       +\n" +
+                            "           '                  |\n" +
+                            "       ()       ,=\"``\"=.    - o -\n" +
+                            "               /    O \\     |\n" +
+                            "          *   |  '       |\n" +
+                            "               \\  '     /          '\n" +
+                            "            .   '=.__.='          *\n" +
+                            "   +                         +\n" +
+                            "        O      *        '       .Mars");
+                }
+                if (distanceToVenus < 1){
+                    System.out.println("             _______\n" +
+                            "          .-' _____ '-.\n" +
+                            "        .' .-'.  ':'-. '.\n" +
+                            "       / .''::: .:    '. \\\n" +
+                            "      / /   :::::'      \\ \\\n" +
+                            "     | ;.    ':' `       ; |\n" +
+                            "     | |       '..       | |\n" +
+                            "     | ; '      ::::.    ; |\n" +
+                            "      \\ \\       '::::   / /\n" +
+                            "       \\ '.      :::  .' /\n" +
+                            "        '. '-.___'_.-' .'\n" +
+                            "Venus     '-._______.-");
+                }
+                if (distanceToUranus < 1){
+                    System.out.println("                                                                    ..;===+.\n" +
+                            "                                                                .:=iiiiii=+=\n" +
+                            "                                                             .=i))=;::+)i=+,\n" +
+                            "                                                          ,=i);)I)))I):=i=;\n" +
+                            "                                                       .=i==))))ii)))I:i++\n" +
+                            "                                                     +)+))iiiiiiii))I=i+:'\n" +
+                            "                                .,:;;++++++;:,.       )iii+:::;iii))+i='\n" +
+                            "                             .:;++=iiiiiiiiii=++;.    =::,,,:::=i));=+'\n" +
+                            "                           ,;+==ii)))))))))))ii==+;,      ,,,:=i))+=:\n" +
+                            "                         ,;+=ii))))))IIIIII))))ii===;.    ,,:=i)=i+\n" +
+                            "                        ;+=ii)))IIIIITIIIIII))))iiii=+,   ,:=));=,\n" +
+                            "                      ,+=i))IIIIIITTTTTITIIIIII)))I)i=+,,:+i)=i+\n" +
+                            "                     ,+i))IIIIIITTTTTTTTTTTTI))IIII))i=::i))i='\n" +
+                            "                    ,=i))IIIIITLLTTTTTTTTTTIITTTTIII)+;+i)+i`\n" +
+                            "                    =i))IIITTLTLTTTTTTTTTIITTLLTTTII+:i)ii:'\n" +
+                            "                   +i))IITTTLLLTTTTTTTTTTTTLLLTTTT+:i)))=,\n" +
+                            "                   =))ITTTTTTTTTTTLTTTTTTLLLLLLTi:=)IIiii;\n" +
+                            "                  .i)IIITTTTTTTTLTTTITLLLLLLLT);=)I)))))i;\n" +
+                            "                  :))IIITTTTTLTTTTTTLLHLLLLL);=)II)IIIIi=:\n" +
+                            "                  :i)IIITTTTTTTTTLLLHLLHLL)+=)II)ITTTI)i=\n" +
+                            "                  .i)IIITTTTITTLLLHHLLLL);=)II)ITTTTII)i+\n" +
+                            "                  =i)IIIIIITTLLLLLLHLL=:i)II)TTTTTTIII)i'\n" +
+                            "                +i)i)))IITTLLLLLLLLT=:i)II)TTTTLTTIII)i;\n" +
+                            "              +ii)i:)IITTLLTLLLLT=;+i)I)ITTTTLTTTII))i;\n" +
+                            "             =;)i=:,=)ITTTTLTTI=:i))I)TTTLLLTTTTTII)i;\n" +
+                            "           +i)ii::,  +)IIITI+:+i)I))TTTTLLTTTTTII))=,\n" +
+                            "         :=;)i=:,,    ,i++::i))I)ITTTTTTTTTTIIII)=+'\n" +
+                            "       .+ii)i=::,,   ,,::=i)))iIITTTTTTTTIIIII)=+\n" +
+                            "      ,==)ii=;:,,,,:::=ii)i)iIIIITIIITIIII))i+:'\n" +
+                            "     +=:))i==;:::;=iii)+)=  `:i)))IIIII)ii+'\n" +
+                            "   .+=:))iiiiiiii)))+ii;\n" +
+                            "  .+=;))iiiiii)));ii+\n" +
+                            " .+=i:)))))))=+ii+\n" +
+                            ".;==i+::::=)i=;\n" +
+                            ",+==iiiiii+,\n" +
+                            "`+=+++;`Uranus");
+                }
+                if (distanceToJupiter < 1){
+                    System.out.println("o               .        ___---___                    .                   \n" +
+                            "       .              .--\\        --.     .     .         .\n" +
+                            "                    ./.;_.\\     __/~ \\.     \n" +
+                            "                   /;  / `-'  __\\    . \\                            \n" +
+                            " .        .       / ,--'     / .   .;   \\        |\n" +
+                            "                 | .|       /       __   |      -O-       .\n" +
+                            "                |__/    __ |  . ;   \\ | . |      |\n" +
+                            "                |      /  \\\\_    . ;| \\___|    \n" +
+                            "   .    o       |      \\  .~\\\\___,--'     |           .\n" +
+                            "                 |     | . ; ~~~~\\_    __|\n" +
+                            "    |             \\    \\   .  .  ; \\  /_/   .\n" +
+                            "   -O-        .    \\   /         . |  ~/                  .\n" +
+                            "    |    .          ~\\ \\   .      /  /~          o\n" +
+                            "  .                   ~--___ ; ___--~       \n" +
+                            "                 .          ---         .              -Jupiter");
+                }
 
                 for (int i = 0; i < spaceSize; i++) {
                     System.out.println("\n");
@@ -162,82 +270,77 @@ public class Space {
                         break;
                 }
 
-                if (xEarth<0) {xEarth+=9;}
-                if (yEarth<0) {yEarth+=9;}
-                if (xEarth>8) {xEarth-=9;}
-                if (yEarth>8) {yEarth-=9;}
+                if (xEarth<0) {xEarth+=size;}
+                if (yEarth<0) {yEarth+=size;}
+                if (xEarth==size) {xEarth-=size;}
+                if (yEarth==size) {yEarth-=size;}
                 earth.setEarth(true);
                 earth.findDisplayString();
                 gameSpace[xEarth][yEarth] = earth;
 
-                if (xMars<0) {xMars+=9;}
-                if (yMars<0) {yMars+=9;}
-                if (xMars>8) {xMars-=9;}
-                if (yMars>8) {yMars-=9;}
+                if (xMars<0) {xMars+=size;}
+                if (yMars<0) {yMars+=size;}
+                if (xMars==size) {xMars-=size;}
+                if (yMars==size) {yMars-=size;}
                 mars.setMars(true);
                 mars.findDisplayString();
                 gameSpace[xMars][yMars] = mars;
 
-                if (xVenus<0) {xVenus+=9;}
-                if (yVenus<0) {yVenus+=9;}
-                if (xVenus>8) {xVenus-=9;}
-                if (yVenus>8) {yVenus-=9;}
+                if (xVenus<0) {xVenus+=size;}
+                if (yVenus<0) {yVenus+=size;}
+                if (xVenus==size) {xVenus-=size;}
+                if (yVenus==size) {yVenus-=size;}
                 venus.setVenus(true);
                 venus.findDisplayString();
                 gameSpace[xVenus][yVenus] = venus;
 
-                if (xUranus<0) {xUranus+=9;}
-                if (yUranus<0) {yUranus+=9;}
-                if (xUranus>8) {xUranus-=9;}
-                if (yUranus>8) {yUranus-=9;}
+                if (xUranus<0) {xUranus+=size;}
+                if (yUranus<0) {yUranus+=size;}
+                if (xUranus==size) {xUranus-=size;}
+                if (yUranus==size) {yUranus-=size;}
                 uranus.setUranus(true);
                 uranus.findDisplayString();
                 gameSpace[xUranus][yUranus] = uranus;
 
-                if (xJupiter<0) {xJupiter+=9;}
-                if (yJupiter<0) {yJupiter+=9;}
-                if (xJupiter>8) {xJupiter-=9;}
-                if (yJupiter>8) {yJupiter-=9;}
+                if (xJupiter<0) {xJupiter+=size;}
+                if (yJupiter<0) {yJupiter+=size;}
+                if (xJupiter==size) {xJupiter-=size;}
+                if (yJupiter==size) {yJupiter-=size;}
                 jupiter.setJupiter(true);
                 jupiter.findDisplayString();
                 gameSpace[xJupiter][yJupiter] = jupiter;
 
-            } while ((int)(Math.round(distanceToEarth)) >= 1);
+                artemis.setArtemis(true);
+                artemis.findDisplayString();
+                gameSpace[xArtemis][yArtemis] = artemis;
 
-            System.out.println("                     ▓▓██████████████                      \n" +
-                    "                      ▓▓████████████████████▓▓                  \n" +
-                    "                  ██████▓▓▒▒▒▒▓▓██████████▓▓██████              \n" +
-                    "              ▒▒████▓▓▒▒▒▒▒▒▒▒▒▒██████████▒▒▒▒██████░░          \n" +
-                    "            ▓▓████▒▒▓▓██▒▒▒▒▓▓██████████▓▓▒▒▒▒▒▒▓▓████          \n" +
-                    "          ██████▒▒██▓▓▓▓████████▓▓▒▒▓▓██▒▒▒▒▒▒▒▒▒▒▒▒████░░      \n" +
-                    "          ██▓▓▒▒██████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████      \n" +
-                    "        ██▓▓▓▓██████████▓▓▓▓██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████    \n" +
-                    "      ████████████████████▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████  \n" +
-                    "      ████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓██  \n" +
-                    "    ▓▓████████████████▒▒▒▒▒▒▒▒▓▓▒▒▒▒████▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██  \n" +
-                    "    ████████████████▓▓▒▒▓▓████▒▒▓▓██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓██\n" +
-                    "  ▓▓██████████████████▒▒▒▒▒▒██▓▓████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██\n" +
-                    "  ██████████████████▒▒▒▒▒▒▒▒▓▓████████▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██\n" +
-                    "  ████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██▓▓▓▓▒▒▒▒▒▒▒▒██▒▒██\n" +
-                    "▒▒██████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▒▒▒▒████████▒▒▒▒██████\n" +
-                    "▓▓██████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██▒▒▒▒▒▒▓▓████▓▓▒▒██████\n" +
-                    "██████████████▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▒▒██████████▒▒██████\n" +
-                    "▓▓██▓▓██████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██████████████████████\n" +
-                    "▒▒██▓▓▒▒████████▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██████████████████\n" +
-                    "  ████▒▒▓▓██████████████▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██████████████████\n" +
-                    "  ████▒▒▒▒████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████████████████████\n" +
-                    "  ▒▒██▒▒▒▒████████████████▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓████████████████████\n" +
-                    "    ████▒▒██████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒████████████████████▓▓\n" +
-                    "    ▓▓██▒▒██████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒████████████████████  \n" +
-                    "      ██████████████████████▓▓▒▒▒▒▒▒▒▒▒▒▒▒██▒▒████████████████  \n" +
-                    "      ▒▒████████████████████▓▓▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓██████████████▒▒  \n" +
-                    "        ▓▓████████████████████▒▒▒▒▒▒▒▒▒▒██▓▓██████████████▓▓    \n" +
-                    "          ████████████████████▒▒▒▒▒▒▒▒████████████████████      \n" +
-                    "          ░░████████████████████████████████████████████        \n" +
-                    "              ▓▓████████████████████████████████████▒▒          \n" +
-                    "                  ████████████████████████████████              \n" +
-                    "                      ▓▓████████████████████▓▓   ");
+            } while (distanceToEarth > 1);
+
+            System.out.println("              _-o#&&*''''?d:>b\\_\n" +
+                    "          _o/\"`''  '',, dMF9MMMMMHo_\n" +
+                    "       .o&#'        `\"MbHMMMMMMMMMMMHo.\n" +
+                    "     .o\"\" '         vodM*$&&HMMMMMMMMMM?.\n" +
+                    "    ,'              $M&ood,~'`(&##MMMMMMH\\\n" +
+                    "   /               ,MMMMMMM#b?#bobMMMMHMMML\n" +
+                    "  &              ?MMMMMMMMMMMMMMMMM7MMM$R*Hk\n" +
+                    " ?$.            :MMMMMMMMMMMMMMMMMMM/HMMM|`*L\n" +
+                    "|               |MMMMMMMMMMMMMMMMMMMMbMH'   T,\n" +
+                    "$H#:            `*MMMMMMMMMMMMMMMMMMMMb#}'  `?\n" +
+                    "]MMH#             \"\"*\"\"\"\"*#MMMMMMMMMMMMM'    -\n" +
+                    "MMMMMb_                   |MMMMMMMMMMMP'     :\n" +
+                    "HMMMMMMMHo                 `MMMMMMMMMT       .\n" +
+                    "?MMMMMMMMP                  9MMMMMMMM}       -\n" +
+                    "-?MMMMMMM                  |MMMMMMMMM?,d-    '\n" +
+                    " :|MMMMMM-                 `MMMMMMMT .M|.   :\n" +
+                    "  .9MMM[                    &MMMMM*' `'    .\n" +
+                    "   :9MMk                    `MMM#\"        -\n" +
+                    "     &M}                     `          .-\n" +
+                    "      `&.                             .\n" +
+                    "        `~,   .                     ./\n" +
+                    "            . _                  .-\n" +
+                    "              '`--._,dd###pp=\"\"'");
             System.out.println("Artemis has reached the Earth");
+
 
         }
 
