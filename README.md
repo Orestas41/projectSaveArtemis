@@ -2,7 +2,7 @@
 
 Author: Orestas Dulinskas
 
-## Background
+### Background
 
 Game was written during the training period at TSI. Objective was to sollidify Object Oriented Programming knowledge
 
